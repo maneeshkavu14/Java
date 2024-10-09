@@ -33,25 +33,30 @@ public class MethodOverloadingSession{
 
 		payBill("Electricity", 500);
 
+// Variable Argument
+
+		double returnedAvg= average(5,15.0,45.5,80,90);
+		System.out.println("returnedAvg "+returnedAvg);
+
 	}
 
 
 //findProductsBy
 
 	public static void  findProductsBy(String p_name){
-		System.out.println(p_name);
+		System.out.println("Product Name " +p_name);
 	}
 	public static void  findProductsBy(int p_id){
 		System.out.println(p_id);
 	}
 
 	public static void findProductsBy(int p_id , String p_name, float p_price){
-		System.out.println(p_id + p_name + p_price);
+		System.out.println("Product Id" +p_id +"Product Name" + p_name + "Product Price " +p_price);
 
 	}
 
 	public static void findProductsBy(String p_name, int p_id ){
-		System.out.println(p_name + p_id);
+		System.out.println("Product Name " +p_name + "Product Id " +p_id);
 	}
 
 // sendEmail methods
@@ -86,6 +91,18 @@ public class MethodOverloadingSession{
 
 	public static void payBill(String billType, int amount){
 		System.out.println("Paying " + billType + " bill of amount: " + amount);
+	}
+
+// Variable Argument
+
+	public static double average(double... value){
+		double sum=0;
+		for(int i=0 ; i<value.length; i++){
+			sum=sum+value[i];
+			
+		} 
+		double avg= sum/value.length;
+		return avg;
 	}
 
 }
