@@ -1,6 +1,5 @@
-public class SmartWatchDetails {
+public class SmartWatchDetails{
 	
-	// array named as watchesDetails
 	static SmartWatch[] watchesDetails = new SmartWatch[8];
 
 	public static void main(String[] args) {
@@ -14,6 +13,8 @@ public class SmartWatchDetails {
 		SmartWatch watch7 = new SmartWatch("OnePlus", "OnePlus Band", 250, 15000);
 		SmartWatch watch8 = new SmartWatch("Fitbit", "Versa 3", 500, 30000);
 
+
+
 		savedData(watch1);
 		savedData(watch2);
 		savedData(watch3);
@@ -23,118 +24,37 @@ public class SmartWatchDetails {
 		savedData(watch7);
 		savedData(watch8);
 
-		///filter by name
 
-		watchBrandName("Firebolt");
-
-
-		/// update the price
-
-		updateByPrice("Samsung",25000);
-
-
-		/// delete by name 
-
-		boolean result=deleteByName("Samsung");
-
-		if(result = true){
-			System.out.println("After deletion remaining");
-
-			for (int i = 0; i < watchesDetails.length; i++) {
-			if (watchesDetails[i] != null) {
-				watchesDetails[i].displayDetails();
-			}
-			// else{
-			// 		System.out.println("Null Found :");
-			// }
-		}
-
-		}
-	}
-
-	/// filter by brand name
-
-	public static SmartWatch watchBrandName(String WatchName) {
-		for (int i = 0; i < watchesDetails.length; i++) {
-			// if(watchesDetails[i]!=null){
-				if (watchesDetails[i].brandName.equals(WatchName)) {
-					System.out.println("****************************");
-					System.out.println("Watch Found :");
-					// System.out.println("****************************");
-					watchesDetails[i].displayDetails();
-					return watchesDetails[i];
-				}
-			// }
-		}
-		System.out.println("****************************");
-		System.out.println("watch not found");
-		System.out.println("****************************");
-		return null;
-	}
-
-/// update the existing value
-
-	public static boolean updateByPrice(String WatchName, int NewPrice) {
-		for (int i = 0; i < watchesDetails.length; i++) {
-			// if(watchesDetails[i]!=null){
-				if (watchesDetails[i].brandName.equals(WatchName)) {
-					System.out.println("****************************");
-					System.out.println("Before Update :");
-
-					watchesDetails[i].displayDetails();
-					
-					watchesDetails[i].price = NewPrice;
-					System.out.println("****************************");
-					System.out.println("After Update :");
-					watchesDetails[i].displayDetails();
-					
-				return true;
-				}
-			// }
-		}
-		System.out.println("Update fails");
-		return false;
-	}
-
-
-	/// delete the existing value
-
-	public static boolean deleteByName (String WatchName){
-
-		for(int i=0;i<watchesDetails.length; i++){
-
-			if (watchesDetails[i]!=null) {
-				if(watchesDetails[i].brandName.equals(WatchName)){
-				System.out.println("****************************");
-				System.out.println("Deleting in progress . . . .");
-				watchesDetails[i].displayDetails();
-				System.out.println("****************************");
-				System.out.println("Deleted successfully");
-				watchesDetails[i]=null;
-				System.out.println("****************************");		
-				return true;
-				}
-				
-			}
-			
-		}
-				System.out.println("****************************");
-				System.out.println("Went Wrong");
-				return false;
 		
 
-	}
 
-	public static boolean savedData(SmartWatch watches) {
+		for (int i=0; i<watchesDetails.length; i++)
+		{
 
-		for (int i = 0; i < watchesDetails.length; i++) {
-			if (watchesDetails[i] == null) {
-				watchesDetails[i] = watches;
-				return true;
-			}
+		if (watchesDetails[i]!=null){
+
+			watchesDetails[i].displayDetails();
+		}
 		}
 
-		System.out.println("Sorry, data could not be inserted!!!");
-		return false;
+
+
 	}
+
+	public static boolean savedData( SmartWatch watches){
+
+		for (int i=0;i<watchesDetails.length ; i++) {
+
+		if(watchesDetails[i]==null){
+			watchesDetails[i]=watches;
+			return true;
+		}
+		
+	}
+
+	System.out.println("Sorry data Could not be inserted!!!");
+	return false;
+
+	}
+
 }
