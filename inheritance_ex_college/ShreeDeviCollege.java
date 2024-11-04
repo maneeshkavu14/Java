@@ -13,33 +13,39 @@ public class ShreeDeviCollege extends College {
 
     public void printDetails(){
 
+    	System.out.println("\n****************************");
+
+
     	System.out.println("SHREE DEVI COLLEGE DETAILS");
 
-		System.out.println("\n**************Principal details:****************");
+		System.out.println("\n**************Principal details:****************\n");
 		principal.printDetails();
 
 		System.out.println("\n**************hod details:******************\n");
 		for(int i = 0; i<hods.length; i++){
-        	System.out.println("\n");
 			hods[i].printDetails();
+			System.out.println("\n");
+
 		}
 
         System.out.println("\n*************Professors details:***********\n");
 		for(int i = 0; i<professors.length; i++){
-			System.out.println("\n");
 			professors[i].printDetails();
+			System.out.println("\n");
+
 		}
     		
     	System.out.println("\n**************Student details:*************\n");
 
     	for(int i = 0; i<students.length; i++){
-    		System.out.println("\n");
 			students[i].printDetails();
+			System.out.println("\n");
+
 		}
 
 		System.out.println("\nNumber of Department is:"+no_ofDepartments);
 		System.out.println("\nNumber of Faculty:"+totalFaculties);
-		System.out.println("\nNumber of Events:\n"+no_ofEvents);
+		System.out.println("\nNumber of Events:"+no_ofEvents);
 
 	}
 }
